@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://c26swu0jpe0ud"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_dmrkw"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_dmrkw")
+metadata/_edit_horizontal_guides_ = []
+
+[node name="TitleLabel" type="Label" parent="."]
+offset_left = 492.0
+offset_top = -4.0
+offset_right = 682.0
+offset_bottom = 38.0
+theme_type_variation = &"HeaderLarge"
+text = "2D Platformer"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Options" type="VFlowContainer" parent="."]
+offset_left = 540.0
+offset_top = 193.0
+offset_right = 627.0
+offset_bottom = 393.0
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Options"]
+layout_mode = 2
+text = "Start "
+
+[node name="Fullscreen" type="Button" parent="Options"]
+layout_mode = 2
+text = "Fullscreen
+"
+
+[node name="Quit" type="Button" parent="Options"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Options/Quit" to="." method="_on_quit_pressed"]

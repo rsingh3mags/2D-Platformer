@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy76b8gpiiadb"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_j3m2e"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_j3m2e")
+
+[node name="CurrentLevel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.003
+offset_left = -3.456
+offset_right = 60.544
+offset_bottom = 28.0
+text = "Level: 0
+"
+
+[node name="Coins" type="Label" parent="."]
+offset_top = 28.0
+offset_right = 47.0
+offset_bottom = 54.0
+text = "Coins: 0
+"

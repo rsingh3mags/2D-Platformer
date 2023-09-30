@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c135xgfg7dao1"]
+
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="1_intvm"]
+[ext_resource type="Script" path="res://WalkingEnemy.gd" id="1_o0xde"]
+[ext_resource type="PackedScene" uid="uid://de2kt53itm2f0" path="res://Hitbox.tscn" id="3_xlsjo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws5en"]
+size = Vector2(10, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3yq6"]
+atlas = ExtResource("1_intvm")
+region = Rect2(17, 289, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kb8sa"]
+atlas = ExtResource("1_intvm")
+region = Rect2(33, 289, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r057n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3yq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kb8sa")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw8s8"]
+size = Vector2(11, 10.5)
+
+[node name="WalkingEnemy" type="CharacterBody2D"]
+position = Vector2(-1, 4)
+script = ExtResource("1_o0xde")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_ws5en")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_r057n")
+animation = &"Walking"
+frame = 1
+frame_progress = 0.566312
+
+[node name="LedgeCheckLeft" type="RayCast2D" parent="."]
+position = Vector2(-4, -1)
+target_position = Vector2(2.08165e-12, 9)
+
+[node name="LedgeCheckRight" type="RayCast2D" parent="."]
+position = Vector2(6, -1)
+target_position = Vector2(2.08165e-12, 9)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_xlsjo")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_sw8s8")
