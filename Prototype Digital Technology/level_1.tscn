@@ -1411,7 +1411,7 @@ text = "Level 2"
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin5" parent="Coins" instance=ExtResource("5_kg3cp")]
-position = Vector2(208, 168)
+position = Vector2(208, 200)
 
 [node name="Coin" parent="Coins" instance=ExtResource("5_kg3cp")]
 position = Vector2(295, 208)
