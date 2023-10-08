@@ -12,7 +12,7 @@ offset_top = -4.0
 offset_right = 682.0
 offset_bottom = 38.0
 theme_type_variation = &"HeaderLarge"
-text = "2D Platformer"
+text = "Pogo Jump"
 horizontal_alignment = 1
 vertical_alignment = 2
 

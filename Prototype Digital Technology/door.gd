@@ -10,4 +10,3 @@ func _on_body_entered(body):
 		await get_tree().create_timer(3).timeout
 		door = false
 		player_entered.emit(level)
-

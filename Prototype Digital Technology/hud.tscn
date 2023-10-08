@@ -9,15 +9,18 @@ script = ExtResource("1_j3m2e")
 anchors_preset = -1
 anchor_left = 0.003
 anchor_right = 0.003
-offset_left = -3.456
-offset_right = 60.544
-offset_bottom = 28.0
+offset_left = 19.544
+offset_top = 1.0
+offset_right = 83.544
+offset_bottom = 29.0
 text = "Level: 0
 "
+metadata/_edit_group_ = true
 
 [node name="Coins" type="Label" parent="."]
-offset_top = 28.0
-offset_right = 47.0
-offset_bottom = 54.0
-text = "Coins: 0
-"
+offset_left = 23.0
+offset_top = 29.0
+offset_right = 85.0
+offset_bottom = 55.0
+text = "Coins: 0"
+metadata/_edit_group_ = true

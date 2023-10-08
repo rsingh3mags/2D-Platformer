@@ -67,4 +67,4 @@ func _on_area_2d_area_entered(area):
 		position.x = 107
 		position.y = 281
 		in_Hitbox = false
-		$AnimatedSprite2D.play("")
+		$AnimatedSprite2D.play("death")

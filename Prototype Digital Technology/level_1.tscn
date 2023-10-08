@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://duhne5awyevaq"]
+[gd_scene load_steps=12 format=3 uid="uid://duhne5awyevaq"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_3806y"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_s0w6n"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c1rnrfhaqe0kh" path="res://coin.tscn" id="5_kg3cp"]
 [ext_resource type="PackedScene" uid="uid://c0k13v4s85tsw" path="res://Spikes.tscn" id="7_kres1"]
 [ext_resource type="PackedScene" uid="uid://c135xgfg7dao1" path="res://WalkingEnemy.tscn" id="8_exi7c"]
+[ext_resource type="PackedScene" uid="uid://cj7bjn36qcmak" path="res://jumppad.tscn" id="9_li01k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
@@ -303,7 +304,7 @@ separation = Vector2i(1, 1)
 11:4/0 = 0
 11:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:4/0/physics_layer_0/angular_velocity = 0.0
-11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -9, 8, 8, -8, 8)
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:4/0 = 0
 12:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:4/0/physics_layer_0/angular_velocity = 0.0
@@ -1433,6 +1434,9 @@ position = Vector2(496, 224)
 
 [node name="WalkingEnemy2" parent="." instance=ExtResource("8_exi7c")]
 position = Vector2(528, 175)
+
+[node name="Jumppad" parent="." instance=ExtResource("9_li01k")]
+position = Vector2(328, 248)
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]
