@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lga3mmfumvqy"]
+[gd_scene load_steps=12 format=3 uid="uid://lga3mmfumvqy"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_nkloq"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_2j7un"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c1rnrfhaqe0kh" path="res://coin.tscn" id="6_iyxpc"]
 [ext_resource type="PackedScene" uid="uid://c0k13v4s85tsw" path="res://Spikes.tscn" id="7_lctcl"]
 [ext_resource type="PackedScene" uid="uid://c135xgfg7dao1" path="res://WalkingEnemy.tscn" id="8_ey3ny"]
+[ext_resource type="PackedScene" uid="uid://g61ta7a1gv8j" path="res://falling_spikes.tscn" id="9_sdevx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
@@ -1398,15 +1399,15 @@ layer_0/tile_data = PackedInt32Array(1179653, 196608, 4, 1179654, 196608, 4, 117
 position = Vector2(107, 281)
 
 [node name="Door" parent="." instance=ExtResource("5_wsw8g")]
-position = Vector2(648, 151)
-level = "res://level_2.tscn"
+position = Vector2(894, 278)
+level = "res://level_4.tscn"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 784.0
-offset_top = 128.0
-offset_right = 838.0
-offset_bottom = 154.0
-text = "Level 2"
+offset_left = 871.0
+offset_top = 237.0
+offset_right = 925.0
+offset_bottom = 263.0
+text = "Level 4"
 
 [node name="Coins" type="Node" parent="."]
 
@@ -1414,10 +1415,10 @@ text = "Level 2"
 position = Vector2(204, 186)
 
 [node name="Coin" parent="Coins" instance=ExtResource("6_iyxpc")]
-position = Vector2(295, 208)
+position = Vector2(307, 165)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("6_iyxpc")]
-position = Vector2(664, 112)
+position = Vector2(748, 200)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("6_iyxpc")]
 position = Vector2(504, 128)
@@ -1426,13 +1427,19 @@ position = Vector2(504, 128)
 position = Vector2(392, 144)
 
 [node name="Spikes" parent="." instance=ExtResource("7_lctcl")]
-position = Vector2(280, 224)
+position = Vector2(402, 194)
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_ey3ny")]
 position = Vector2(496, 224)
 
 [node name="WalkingEnemy2" parent="." instance=ExtResource("8_ey3ny")]
 position = Vector2(528, 175)
+
+[node name="FallingSpikes" parent="." instance=ExtResource("9_sdevx")]
+position = Vector2(663, 170)
+
+[node name="FallingSpikes2" parent="." instance=ExtResource("9_sdevx")]
+position = Vector2(632, 169)
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]

@@ -53,7 +53,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 	else:
 		$AnimatedSprite2D.play("Idle")
-		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
+		velocity.x = move_toward(velocity.x, 0, float(SPEED) / 2)
 	
 	if not is_on_floor():
 		$AnimatedSprite2D.play("jump")

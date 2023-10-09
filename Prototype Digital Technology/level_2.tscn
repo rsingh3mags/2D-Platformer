@@ -1407,7 +1407,7 @@ offset_left = 898.0
 offset_top = 244.0
 offset_right = 952.0
 offset_bottom = 270.0
-text = "Level 2"
+text = "Level 3"
 
 [node name="Coins" type="Node" parent="."]
 
@@ -1434,6 +1434,9 @@ position = Vector2(422, 270)
 
 [node name="WalkingEnemy2" parent="." instance=ExtResource("8_5ytd4")]
 position = Vector2(535, 175)
+
+[node name="WalkingEnemy3" parent="." instance=ExtResource("8_5ytd4")]
+position = Vector2(696, 237)
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]
