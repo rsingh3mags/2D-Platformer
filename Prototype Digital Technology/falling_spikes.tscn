@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://g61ta7a1gv8j"]
+
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="1_6plqf"]
+[ext_resource type="Script" path="res://falling_spikes.gd" id="1_ehwx2"]
+[ext_resource type="PackedScene" uid="uid://de2kt53itm2f0" path="res://Hitbox.tscn" id="2_s1bq0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jorkj"]
+atlas = ExtResource("1_6plqf")
+region = Rect2(102, 136, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns063"]
+atlas = ExtResource("1_6plqf")
+region = Rect2(102, 136, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptcgr"]
+atlas = ExtResource("1_6plqf")
+region = Rect2(102, 136, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uss7u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jorkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns063")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptcgr")
+}],
+"loop": true,
+"name": &"falling",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jp4"]
+size = Vector2(14, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kg2ul"]
+size = Vector2(14, 218)
+
+[node name="FallingSpikes" type="Node2D"]
+script = ExtResource("1_ehwx2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 8)
+sprite_frames = SubResource("SpriteFrames_uss7u")
+animation = &"falling"
+
+[node name="Hitbox" parent="." instance=ExtResource("2_s1bq0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(1, 5.5)
+shape = SubResource("RectangleShape2D_c1jp4")
+
+[node name="PlayerDetect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect"]
+position = Vector2(1, 109)
+shape = SubResource("RectangleShape2D_kg2ul")
+
+[connection signal="area_entered" from="PlayerDetect" to="." method="_on_player_detect_area_entered"]

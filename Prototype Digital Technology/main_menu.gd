@@ -10,7 +10,7 @@ func _ready():
 		$Options/Fullscreen.hide()
 		$Options/Quit.hide() 
 	
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_start_button_pressed():

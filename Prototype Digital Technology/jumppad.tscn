@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cj7bjn36qcmak"]
+[gd_scene load_steps=9 format=3 uid="uid://cj7bjn36qcmak"]
 
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="1_b27ec"]
 [ext_resource type="Script" path="res://jumppad.gd" id="1_fa282"]
@@ -15,6 +15,10 @@ region = Rect2(68, 136, 16, 16)
 atlas = ExtResource("1_b27ec")
 region = Rect2(85, 136, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3suj2"]
+atlas = ExtResource("1_b27ec")
+region = Rect2(51, 136, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_o1ixs"]
 animations = [{
 "frames": [{
@@ -29,7 +33,15 @@ animations = [{
 }],
 "loop": true,
 "name": &"boing",
-"speed": 8.0
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3suj2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oaok"]

@@ -62,9 +62,9 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
+		$AnimatedSprite2D.play("death")
 		in_Hitbox = true
 		await get_tree().create_timer(2).timeout
 		position.x = 107
 		position.y = 281
 		in_Hitbox = false
-		$AnimatedSprite2D.play("death")
