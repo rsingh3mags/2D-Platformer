@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://cj7bjn36qcmak"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="1_b27ec"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="1_b27ec"]
 [ext_resource type="Script" path="res://jumppad.gd" id="1_fa282"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r6xfq"]

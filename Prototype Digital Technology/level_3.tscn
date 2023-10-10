@@ -1,18 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://lga3mmfumvqy"]
+[gd_scene load_steps=13 format=3 uid="uid://be7blfrfjrcc1"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_nkloq"]
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_2j7un"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_irt4k"]
 [ext_resource type="PackedScene" uid="uid://dy76b8gpiiadb" path="res://hud.tscn" id="3_bsrcs"]
-[ext_resource type="PackedScene" uid="uid://cnexw0s5fr85l" path="res://player.tscn" id="4_f7iml"]
-[ext_resource type="PackedScene" uid="uid://dbbbloqrrb1p6" path="res://door.tscn" id="5_wsw8g"]
-[ext_resource type="PackedScene" uid="uid://c1rnrfhaqe0kh" path="res://coin.tscn" id="6_iyxpc"]
-[ext_resource type="PackedScene" uid="uid://c0k13v4s85tsw" path="res://Spikes.tscn" id="7_lctcl"]
-[ext_resource type="PackedScene" uid="uid://c135xgfg7dao1" path="res://WalkingEnemy.tscn" id="8_ey3ny"]
-[ext_resource type="PackedScene" uid="uid://g61ta7a1gv8j" path="res://falling_spikes.tscn" id="9_sdevx"]
+[ext_resource type="PackedScene" uid="uid://bwharjwv2jsm2" path="res://player.tscn" id="4_f7iml"]
+[ext_resource type="PackedScene" path="res://door.tscn" id="5_wsw8g"]
+[ext_resource type="PackedScene" path="res://coin.tscn" id="6_iyxpc"]
+[ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_lctcl"]
+[ext_resource type="PackedScene" path="res://WalkingEnemy.tscn" id="8_ey3ny"]
+[ext_resource type="PackedScene" uid="uid://dym47w4q20r4e" path="res://falling_spikes.tscn" id="9_sdevx"]
+[ext_resource type="PackedScene" uid="uid://c35gd04pflqb0" path="res://moving_platform.tscn" id="10_keqse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
-texture = ExtResource("2_2j7un")
+texture = ExtResource("2_irt4k")
 separation = Vector2i(1, 1)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1440,6 +1441,9 @@ position = Vector2(663, 170)
 
 [node name="FallingSpikes2" parent="." instance=ExtResource("9_sdevx")]
 position = Vector2(632, 169)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("10_keqse")]
+position = Vector2(767, 520)
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]

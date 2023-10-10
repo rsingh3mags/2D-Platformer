@@ -1,18 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://5sujdetwjx6k"]
+[gd_scene load_steps=12 format=3 uid="uid://q4xh15cwq5wy"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_c5als"]
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_d44y4"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_vllve"]
 [ext_resource type="PackedScene" uid="uid://dy76b8gpiiadb" path="res://hud.tscn" id="3_71w5v"]
-[ext_resource type="PackedScene" uid="uid://cnexw0s5fr85l" path="res://player.tscn" id="4_bk1gw"]
-[ext_resource type="PackedScene" uid="uid://dbbbloqrrb1p6" path="res://door.tscn" id="5_4m8y8"]
-[ext_resource type="PackedScene" uid="uid://c1rnrfhaqe0kh" path="res://coin.tscn" id="6_xuh3g"]
-[ext_resource type="PackedScene" uid="uid://c0k13v4s85tsw" path="res://Spikes.tscn" id="7_mk40t"]
-[ext_resource type="PackedScene" uid="uid://c135xgfg7dao1" path="res://WalkingEnemy.tscn" id="8_3vg5p"]
-[ext_resource type="PackedScene" uid="uid://g61ta7a1gv8j" path="res://falling_spikes.tscn" id="9_pstp0"]
+[ext_resource type="PackedScene" uid="uid://bwharjwv2jsm2" path="res://player.tscn" id="4_bk1gw"]
+[ext_resource type="PackedScene" path="res://door.tscn" id="5_4m8y8"]
+[ext_resource type="PackedScene" path="res://coin.tscn" id="6_xuh3g"]
+[ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_mk40t"]
+[ext_resource type="PackedScene" path="res://WalkingEnemy.tscn" id="8_3vg5p"]
+[ext_resource type="PackedScene" uid="uid://dym47w4q20r4e" path="res://falling_spikes.tscn" id="9_pstp0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
-texture = ExtResource("2_d44y4")
+texture = ExtResource("2_vllve")
 separation = Vector2i(1, 1)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c135xgfg7dao1"]
+[gd_scene load_steps=9 format=3]
 
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="1_intvm"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="1_intvm"]
 [ext_resource type="Script" path="res://WalkingEnemy.gd" id="1_o0xde"]
 [ext_resource type="PackedScene" uid="uid://de2kt53itm2f0" path="res://Hitbox.tscn" id="3_xlsjo"]
 

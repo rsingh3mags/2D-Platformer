@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1rnrfhaqe0kh"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_3kt55"]
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_m7r3b"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_m7r3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hhcqb"]
 radius = 6.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coudsghutdxis"
-path="res://.godot/imported/CoinTemp.png-619430210a8e88cac30e73bd26768fcf.ctex"
+uid="uid://b56bgo8ea2ne7"
+path="res://.godot/imported/movingplatform2.0.png-f81b69794a95b706206f9447f4771725.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://CoinTemp.png"
-dest_files=["res://.godot/imported/CoinTemp.png-619430210a8e88cac30e73bd26768fcf.ctex"]
+source_file="res://Assets/movingplatform2.0.png"
+dest_files=["res://.godot/imported/movingplatform2.0.png-f81b69794a95b706206f9447f4771725.ctex"]
 
 [params]
 

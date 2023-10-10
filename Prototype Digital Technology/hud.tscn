@@ -18,16 +18,16 @@ text = "Level: 0
 metadata/_edit_group_ = true
 
 [node name="Coins" type="Label" parent="."]
-offset_left = 23.0
-offset_top = 29.0
-offset_right = 85.0
-offset_bottom = 55.0
-text = "Coins: 0"
+offset_left = 22.0
+offset_top = 27.0
+offset_right = 84.0
+offset_bottom = 53.0
+text = "Gems: 0"
 metadata/_edit_group_ = true
 
 [node name="fps" type="Label" parent="."]
-offset_left = 28.0
+offset_left = 23.0
 offset_top = 54.0
-offset_right = 70.0
+offset_right = 68.0
 offset_bottom = 80.0
-text = "fps = "
+text = "FPS = "

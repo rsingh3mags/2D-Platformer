@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbbbloqrrb1p6"]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="Script" path="res://door.gd" id="1_23f4r"]
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_v5oe1"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_v5oe1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjopq"]
 

@@ -13,6 +13,8 @@ func _physics_process(delta):
 
 func _on_player_detect_area_entered(area):
 	if area.get_parent() is Player:
+		$AnimatableBody2D/AnimationPlayer.play("Shake")
+		await get_tree().create_timer(1).timeout
 		fall()
 
 
@@ -21,3 +23,5 @@ func fall():
 	await get_tree().create_timer(3).timeout
 	position = spawn_pos
 	current_speed = 0
+	$AnimatableBody2D/AnimationPlayer.play("idle")
+	

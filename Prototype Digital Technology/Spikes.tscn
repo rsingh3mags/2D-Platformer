@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0k13v4s85tsw"]
+[gd_scene load_steps=7 format=3 uid="uid://bbh6wtdr23onb"]
 
 [ext_resource type="PackedScene" uid="uid://de2kt53itm2f0" path="res://Hitbox.tscn" id="2_b4aod"]
-[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://monochrome_tilemap_transparent.png" id="2_uy8wn"]
+[ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_uy8wn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wknp"]
 size = Vector2(16, 7.85965)
