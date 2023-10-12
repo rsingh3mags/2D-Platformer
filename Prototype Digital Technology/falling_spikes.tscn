@@ -72,7 +72,7 @@ size = Vector2(14, 11)
 script = ExtResource("1_ehwx2")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(2.08165e-12, 2.08165e-12)
+position = Vector2(0.973221, 2.08165e-12)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
 sprite_frames = SubResource("SpriteFrames_uss7u")

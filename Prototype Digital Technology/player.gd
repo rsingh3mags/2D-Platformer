@@ -5,6 +5,7 @@ var health = 4
 var jump_leaniency = 1
 const SPEED = 150
 const JUMP_VELOCITY = -275
+var dying = false
 
 var in_Hitbox = false
 
@@ -33,7 +34,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
 	#dash()
-#Add the gravity.
+#Add the gravity.")
 	print(in_Hitbox)
 	var in_door = get_parent().find_child("Door").door
 	if not is_on_floor():
@@ -50,20 +51,23 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = true
 		else:
 			$AnimatedSprite2D.flip_h = false
-	else:
+	elif not in_Hitbox:
 		$AnimatedSprite2D.play("Idle")
 		velocity.x = move_toward(velocity.x, 0, float(SPEED) / 2)
-	
-	if not is_on_floor():
+	if dying == true:
+		$AnimatedSprite2D.play("death")
+	elif not is_on_floor():
 		$AnimatedSprite2D.play("jump")
+
 	
 	move_and_slide()
 
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
-		$AnimatedSprite2D.play("death")
+		dying = true
 		in_Hitbox = true
 		await get_tree().create_timer(2).timeout
+		dying = false
 		position.x = 107
 		position.y = 281
 		in_Hitbox = false

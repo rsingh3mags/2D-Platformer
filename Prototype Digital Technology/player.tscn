@@ -66,7 +66,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"death",
-"speed": 7.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -109,7 +109,7 @@ position = Vector2(5.45508, -7.48107)
 rotation = -0.0872665
 scale = Vector2(1.237, 1.27385)
 sprite_frames = SubResource("SpriteFrames_bxsj8")
-animation = &"Idle"
+animation = &"death"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 position = Vector2(-6.03653, 6.25521)
