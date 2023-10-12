@@ -22,7 +22,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2ns4"]
-size = Vector2(16, 7)
+size = Vector2(18, 7)
 
 [node name="Spikes" type="CharacterBody2D"]
 metadata/_edit_group_ = true

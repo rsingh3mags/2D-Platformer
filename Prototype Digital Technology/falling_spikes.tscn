@@ -23,7 +23,7 @@ animations = [{
 size = Vector2(14, 218)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1jp4"]
-size = Vector2(14, 11)
+size = Vector2(14, 13)
 
 [sub_resource type="Animation" id="Animation_vqfj2"]
 resource_name = "Shake"
@@ -66,7 +66,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53rhr"]
-size = Vector2(14, 11)
+size = Vector2(14, 13)
 
 [node name="FallingSpikes" type="Node2D"]
 script = ExtResource("1_ehwx2")
@@ -89,7 +89,7 @@ shape = SubResource("RectangleShape2D_kg2ul")
 position = Vector2(-1, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/AnimatedSprite2D/Hitbox"]
-position = Vector2(1, 5.5)
+position = Vector2(1, 6.5)
 shape = SubResource("RectangleShape2D_c1jp4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D"]
@@ -99,7 +99,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(0, -2.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_53rhr")
 
 [connection signal="area_entered" from="AnimatableBody2D/AnimatedSprite2D/PlayerDetect" to="." method="_on_player_detect_area_entered"]

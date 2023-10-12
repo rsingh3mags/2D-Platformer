@@ -44,8 +44,7 @@ shape = SubResource("RectangleShape2D_ws5en")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_r057n")
 animation = &"Walking"
-frame = 1
-frame_progress = 0.566312
+frame_progress = 0.834833
 
 [node name="LedgeCheckLeft" type="RayCast2D" parent="."]
 position = Vector2(-4, -1)
