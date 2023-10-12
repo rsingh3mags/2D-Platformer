@@ -56,6 +56,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, float(SPEED) / 2)
 	if dying == true:
 		$AnimatedSprite2D.play("death")
+		await get_tree().create_timer(1).timeout
+		$AnimatedSprite2D.play("after_death")
 	elif not is_on_floor():
 		$AnimatedSprite2D.play("jump")
 

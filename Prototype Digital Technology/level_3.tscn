@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://door.tscn" id="5_wsw8g"]
 [ext_resource type="PackedScene" path="res://coin.tscn" id="6_iyxpc"]
 [ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_lctcl"]
-[ext_resource type="PackedScene" path="res://WalkingEnemy.tscn" id="8_ey3ny"]
+[ext_resource type="PackedScene" uid="uid://0anfefu65swf" path="res://WalkingEnemy.tscn" id="8_ey3ny"]
 [ext_resource type="PackedScene" uid="uid://dym47w4q20r4e" path="res://falling_spikes.tscn" id="9_sdevx"]
 [ext_resource type="PackedScene" uid="uid://c35gd04pflqb0" path="res://moving_platform.tscn" id="10_keqse"]
 

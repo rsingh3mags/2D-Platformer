@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bwharjwv2jsm2"]
+[gd_scene load_steps=15 format=3 uid="uid://bwharjwv2jsm2"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_dkmr5"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_ejv3k"]
@@ -11,11 +11,15 @@ region = Rect2(102, 204, 16, 16)
 atlas = ExtResource("2_ejv3k")
 region = Rect2(1, 205, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_37psr"]
+atlas = ExtResource("2_ejv3k")
+region = Rect2(102, 204, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rnrq"]
 atlas = ExtResource("2_ejv3k")
 region = Rect2(102, 204, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_penaq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_twif7"]
 atlas = ExtResource("2_ejv3k")
 region = Rect2(85, 204, 16, 16)
 
@@ -59,10 +63,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_37psr")
+}],
+"loop": true,
+"name": &"after_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4rnrq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_penaq")
+"texture": SubResource("AtlasTexture_twif7")
 }],
 "loop": true,
 "name": &"death",
@@ -109,7 +121,7 @@ position = Vector2(5.45508, -7.48107)
 rotation = -0.0872665
 scale = Vector2(1.237, 1.27385)
 sprite_frames = SubResource("SpriteFrames_bxsj8")
-animation = &"death"
+animation = &"after_death"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 position = Vector2(-6.03653, 6.25521)

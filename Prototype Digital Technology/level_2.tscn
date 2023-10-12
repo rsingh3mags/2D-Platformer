@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://door.tscn" id="4_cfmmb"]
 [ext_resource type="PackedScene" path="res://coin.tscn" id="4_fjehn"]
 [ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_jfop6"]
-[ext_resource type="PackedScene" path="res://WalkingEnemy.tscn" id="8_5ytd4"]
+[ext_resource type="PackedScene" uid="uid://0anfefu65swf" path="res://WalkingEnemy.tscn" id="8_5ytd4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
