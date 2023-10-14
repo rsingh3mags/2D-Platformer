@@ -6,5 +6,5 @@ func level(num):
 func coins(num):
 	$Coins.text = "Gems: " + str(num)
 	
-func _process(delta):
+func _process(_delta):
 	$fps.text = "FPS = " + str(Engine.get_frames_per_second())

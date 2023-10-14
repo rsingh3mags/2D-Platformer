@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bwharjwv2jsm2"]
+[gd_scene load_steps=17 format=3 uid="uid://bx18jdoja1iur"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_dkmr5"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_ejv3k"]
+[ext_resource type="AudioStream" uid="uid://c14gmx456m1wa" path="res://Assets/jump.wav" id="3_5edtn"]
+[ext_resource type="AudioStream" uid="uid://by6iwv2i0o8o7" path="res://Assets/hitHurt.wav" id="4_6e8m3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll4fk"]
 atlas = ExtResource("2_ejv3k")
@@ -142,5 +144,11 @@ shape = SubResource("RectangleShape2D_xs70u")
 position = Vector2(4.53725, -6.35715)
 rotation = -0.0865454
 shape = SubResource("RectangleShape2D_xs70u")
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5edtn")
+
+[node name="Player_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6e8m3")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

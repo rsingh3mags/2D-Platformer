@@ -1,15 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://dxogh0wa1r5og"]
+[gd_scene load_steps=14 format=3 uid="uid://ctpby2jtv45ug"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_3806y"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_agf7j"]
-[ext_resource type="PackedScene" uid="uid://bwharjwv2jsm2" path="res://player.tscn" id="3_a2aj3"]
+[ext_resource type="PackedScene" uid="uid://bx18jdoja1iur" path="res://player.tscn" id="3_a2aj3"]
 [ext_resource type="PackedScene" uid="uid://dy76b8gpiiadb" path="res://hud.tscn" id="4_1ityg"]
-[ext_resource type="PackedScene" path="res://door.tscn" id="4_d8dy6"]
-[ext_resource type="PackedScene" path="res://coin.tscn" id="5_kg3cp"]
+[ext_resource type="PackedScene" uid="uid://bvayvhi5jqsan" path="res://door.tscn" id="4_d8dy6"]
+[ext_resource type="PackedScene" uid="uid://bxs2aiwpgqj04" path="res://coin.tscn" id="5_kg3cp"]
 [ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_kres1"]
 [ext_resource type="PackedScene" uid="uid://0anfefu65swf" path="res://WalkingEnemy.tscn" id="8_exi7c"]
-[ext_resource type="PackedScene" path="res://jumppad.tscn" id="9_li01k"]
+[ext_resource type="PackedScene" uid="uid://dtl8w1bs5xoo6" path="res://jumppad.tscn" id="9_li01k"]
 [ext_resource type="PackedScene" uid="uid://dym47w4q20r4e" path="res://falling_spikes.tscn" id="10_wxmet"]
+[ext_resource type="AudioStream" uid="uid://ljjhy31sfcdq" path="res://Assets/Level1.mp3" id="11_hhutg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
@@ -1454,6 +1455,10 @@ position = Vector2(336, 112)
 
 [node name="FallingSpikes4" parent="." instance=ExtResource("10_wxmet")]
 position = Vector2(384, 112)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_hhutg")
+autoplay = true
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]

@@ -24,7 +24,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 		#dashDirection = Vector2(1,0)
 	#if Input.is_action_just_pressed("ui_left"):
 		#dashDirection = Vector2(-1,0)
-	#if Input.is_action_just_pressed("ui_dash") and canDash:
 		#velocity = dashDirection.normalized() * 1500
 		#canDash = false 
 		#dashing = true
@@ -41,6 +40,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor() and gravity and not in_door and not in_Hitbox:
 		velocity.y = JUMP_VELOCITY
+		$JumpSFX.play()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
@@ -64,13 +64,12 @@ func _physics_process(delta):
 
 	
 	move_and_slide()
-
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
+		$Player_death.play()
 		dying = true
 		in_Hitbox = true
 		await get_tree().create_timer(2).timeout
-		dying = false
 		position.x = 107
 		position.y = 281
 		in_Hitbox = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://bvayvhi5jqsan"]
 
 [ext_resource type="Script" path="res://door.gd" id="1_23f4r"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_v5oe1"]
+[ext_resource type="AudioStream" uid="uid://buam0tr1vwl3f" path="res://Assets/EnteredDoor.wav" id="3_4c1lh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjopq"]
 
@@ -46,5 +47,8 @@ position = Vector2(0.625, -0.5)
 scale = Vector2(1.45312, 1.3125)
 sprite_frames = SubResource("SpriteFrames_iim1o")
 animation = &"idle"
+
+[node name="Entered_Door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4c1lh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

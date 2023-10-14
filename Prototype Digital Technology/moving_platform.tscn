@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c35gd04pflqb0"]
+[gd_scene load_steps=8 format=3 uid="uid://c35gd04pflqb0"]
 
 [ext_resource type="Script" path="res://MovingPlatform.gd" id="1_v51vx"]
 [ext_resource type="Texture2D" uid="uid://b56bgo8ea2ne7" path="res://Assets/movingplatform2.0.png" id="2_x4dfu"]
+[ext_resource type="AudioStream" uid="uid://cvgvca44qq5si" path="res://Assets/MovingPlatform.wav" id="3_hyqqb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7386"]
 size = Vector2(50.25, 16)
@@ -61,5 +62,8 @@ metadata/_edit_group_ = true
 libraries = {
 "": SubResource("AnimationLibrary_d5ras")
 }
+
+[node name="Player_On_Platform" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hyqqb")
 
 [connection signal="area_entered" from="AnimatableBody2D/Area2D" to="." method="_on_area_2d_area_entered"]

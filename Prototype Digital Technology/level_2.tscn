@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://lsjtrdvdlas4"]
+[gd_scene load_steps=14 format=3 uid="uid://lsjtrdvdlas4"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_5ffyg"]
-[ext_resource type="PackedScene" uid="uid://bwharjwv2jsm2" path="res://player.tscn" id="2_l00xe"]
+[ext_resource type="PackedScene" uid="uid://bx18jdoja1iur" path="res://player.tscn" id="2_l00xe"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_yexqm"]
 [ext_resource type="PackedScene" uid="uid://dy76b8gpiiadb" path="res://hud.tscn" id="3_e3ujq"]
-[ext_resource type="PackedScene" path="res://door.tscn" id="4_cfmmb"]
-[ext_resource type="PackedScene" path="res://coin.tscn" id="4_fjehn"]
+[ext_resource type="PackedScene" uid="uid://bvayvhi5jqsan" path="res://door.tscn" id="4_cfmmb"]
+[ext_resource type="PackedScene" uid="uid://bxs2aiwpgqj04" path="res://coin.tscn" id="4_fjehn"]
 [ext_resource type="PackedScene" uid="uid://bbh6wtdr23onb" path="res://Spikes.tscn" id="7_jfop6"]
 [ext_resource type="PackedScene" uid="uid://0anfefu65swf" path="res://WalkingEnemy.tscn" id="8_5ytd4"]
-[ext_resource type="PackedScene" path="res://jumppad.tscn" id="9_ink5b"]
+[ext_resource type="PackedScene" uid="uid://dtl8w1bs5xoo6" path="res://jumppad.tscn" id="9_ink5b"]
+[ext_resource type="PackedScene" uid="uid://c35gd04pflqb0" path="res://moving_platform.tscn" id="10_j5qiw"]
+[ext_resource type="AudioStream" uid="uid://b5arg3m4edae6" path="res://Assets/Level2.mp3" id="11_fcjin"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kxu2t"]
 resource_name = "Tilemap"
@@ -1386,7 +1388,7 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kxu2t")
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_5ffyg")
 level_num = 2
 metadata/_edit_horizontal_guides_ = [-232.0]
@@ -1422,7 +1424,7 @@ position = Vector2(563, 216)
 position = Vector2(307, 255)
 
 [node name="Coin2" parent="Coins" instance=ExtResource("4_fjehn")]
-position = Vector2(836, 241)
+position = Vector2(631, 119)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("4_fjehn")]
 position = Vector2(758, 204)
@@ -1447,6 +1449,13 @@ position = Vector2(367, 219)
 
 [node name="Jumppad2" parent="." instance=ExtResource("9_ink5b")]
 position = Vector2(290, 281)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("10_j5qiw")]
+position = Vector2(641, 530)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_fcjin")
+autoplay = true
 
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]
