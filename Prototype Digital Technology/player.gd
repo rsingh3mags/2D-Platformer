@@ -69,7 +69,7 @@ func _on_area_2d_area_entered(area):
 		$Player_death.play()
 		dying = true
 		in_Hitbox = true
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1).timeout
 		position.x = 107
 		position.y = 281
 		in_Hitbox = false
