@@ -9,7 +9,8 @@ func _ready():
 	if !OS.has_feature("pc"):
 		$Options/Fullscreen.hide()
 		$Options/Quit.hide() 
-	
+		
+		
 func _process(_delta):
 	pass
 

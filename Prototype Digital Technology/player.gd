@@ -12,28 +12,8 @@ var in_Hitbox = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-#Everything on dash
-#var dashDirection = Vector2(1,0)
-#var canDash = false
-#var dashing = false 
-
-#func dash():
-	#if is_on_floor():
-		#canDash = true
-	#if Input.is_action_pressed("ui_right"):
-		#dashDirection = Vector2(1,0)
-	#if Input.is_action_just_pressed("ui_left"):
-		#dashDirection = Vector2(-1,0)
-		#velocity = dashDirection.normalized() * 1500
-		#canDash = false 
-		#dashing = true
-		#await get_tree().create_timer(0.2).timeout
-		#dashing = false
-
-
 func _physics_process(delta):
-	#dash()
-#Add the gravity.")
+#Add the gravity.
 	print(in_Hitbox)
 	var in_door = get_parent().find_child("Door").door
 	if not is_on_floor():
