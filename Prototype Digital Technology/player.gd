@@ -46,6 +46,8 @@ func _physics_process(delta):
 	move_and_slide()
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
+		velocity.x = 0
+		velocity.y = 0
 		$Player_death.play()
 		dying = true
 		in_Hitbox = true
