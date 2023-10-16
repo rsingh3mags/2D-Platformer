@@ -51,7 +51,9 @@ func _on_area_2d_area_entered(area):
 		$Player_death.play()
 		dying = true
 		in_Hitbox = true
+		$Area2D/CollisionShape2D2.set_deferred("disabled",true)
 		await get_tree().create_timer(1).timeout
 		position.x = 107
 		position.y = 281
+		$Area2D/CollisionShape2D2.set_deferred("disabled",false)
 		in_Hitbox = false
