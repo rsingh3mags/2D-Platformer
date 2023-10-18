@@ -1,6 +1,8 @@
 extends ParallaxBackground
+
+# Paralax background speed
 var scroll_speed = 100
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+#Scroll speed of the parallax background
 func _process(delta):
 	scroll_offset.x -= scroll_speed * delta

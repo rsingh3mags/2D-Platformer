@@ -1,23 +1,30 @@
 extends CharacterBody2D
 
+# Player
 class_name Player
-var health = 4
+# Jump leaniency var
 var jump_leaniency = 1
+# Player Speed
 const SPEED = 150
+# Player jump velocity
 const JUMP_VELOCITY = -275
+# dying variable for player death animation
 var dying = false
-
+# Hitbox varabile for player death
 var in_Hitbox = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-#Add the gravity.
+# Add the gravity.
+# Player movemnt and all of the player animations
+# freeze player input when in door and hitbox
 	print(in_Hitbox)
 	var in_door = get_parent().find_child("Door").door
 	if not is_on_floor():
 		velocity.y += gravity * delta
+# freeze Player input when in door and hitbox for jumping
 	if (
 			Input.is_action_just_pressed("jump") and is_on_floor()
 			and gravity and not in_door and not in_Hitbox
@@ -25,7 +32,8 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		$JumpSFX.play()
 	# Get the input direction and handle the movement.
-	# 
+	# Freeze player input when in hitbox and door
+	# all of the player animations are listed in the code bellow
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction and not in_door and not in_Hitbox:
 		velocity.x = direction * SPEED
@@ -48,12 +56,12 @@ func _physics_process(delta):
 
 	
 # When Player enters the Hitbox
+# take player back to the start coodernates and disable player collision untill respawned.
 	move_and_slide()
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
 		velocity.x = 0
 		velocity.y = 0
-		$Player_death.play()
 		dying = true
 		in_Hitbox = true
 		$Area2D/CollisionShape2D2.set_deferred("disabled",true)
