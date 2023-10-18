@@ -2,6 +2,7 @@ extends Node2D
 
 # print MainMenu 
 func _ready():
+	
 	print("MainMenu ready!")
 
 # hide the buttons after the player presses start.
@@ -24,3 +25,5 @@ func _on_fullscreen_pressed():
 # Quit game when the player presses quit.
 func _on_quit_pressed():
 	get_tree().quit()
+
+

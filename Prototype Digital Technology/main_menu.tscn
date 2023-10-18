@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c26swu0jpe0ud"]
+[gd_scene load_steps=5 format=3 uid="uid://dv6iwhccuhn3k"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_dmrkw"]
 [ext_resource type="Script" path="res://ParallaxBackground.gd" id="2_2q3yk"]
 [ext_resource type="Texture2D" uid="uid://bnoy5lbmx0gy0" path="res://Assets/Screenshot 2023-10-16 at 10.20.07 AM.png" id="3_nkdem"]
+[ext_resource type="AudioStream" uid="uid://dl8omxsddeqok" path="res://Assets/menu.mp3" id="4_6ng0n"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_dmrkw")
@@ -52,6 +53,11 @@ motion_mirroring = Vector2(1700, 2.08165e-12)
 position = Vector2(831.5, 277.604)
 scale = Vector2(1.10155, 1.10441)
 texture = ExtResource("3_nkdem")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6ng0n")
+volume_db = 6.0
+autoplay = true
 
 [connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/Fullscreen" to="." method="_on_fullscreen_pressed"]
