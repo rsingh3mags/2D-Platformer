@@ -4,6 +4,8 @@ var door = false
 @export var level = ""
 signal player_entered(level)
 
+func _ready():
+	set_meta("door", 2)
 # What happens when player enters the door.
 # it plays the idle animation, plays the sound.
 # The timer is for the player to wait for the animation to finish and then teleport the next level.

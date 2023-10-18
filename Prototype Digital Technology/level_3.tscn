@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://nltajkb8svgi"]
+[gd_scene load_steps=17 format=3 uid="uid://nltajkb8svgi"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_r7a7j"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_o0y53"]
@@ -1390,6 +1390,9 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kxu2t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucw65"]
+size = Vector2(17.5, 21)
+
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_r7a7j")
 level_num = 3
@@ -1612,5 +1615,41 @@ position = Vector2(1494, -273)
 [node name="FallingSpikes9" parent="." instance=ExtResource("10_mwmkp")]
 position = Vector2(1471, -273)
 
+[node name="Timer" type="CanvasLayer" parent="."]
+
+[node name="Msecs" type="Label" parent="Timer"]
+offset_left = 184.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Minutes" type="Label" parent="Timer"]
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Seconds" type="Label" parent="Timer"]
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="StopTimer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopTimer"]
+position = Vector2(2103.75, 277)
+shape = SubResource("RectangleShape2D_ucw65")
+
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
 [connection signal="coin_collected" from="Coins/Coin" to="." method="_on_coin_coin_collected"]
+[connection signal="body_entered" from="StopTimer" to="." method="_on_stop_timer_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://lsjtrdvdlas4"]
+[gd_scene load_steps=15 format=3 uid="uid://lsjtrdvdlas4"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_5ffyg"]
 [ext_resource type="PackedScene" uid="uid://bx18jdoja1iur" path="res://player.tscn" id="2_l00xe"]
@@ -1387,6 +1387,9 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kxu2t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1wk7"]
+size = Vector2(20, 21)
+
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_5ffyg")
 level_num = 2
@@ -1457,4 +1460,39 @@ stream = ExtResource("11_fcjin")
 volume_db = 8.0
 autoplay = true
 
+[node name="Timer" type="CanvasLayer" parent="."]
+
+[node name="Msecs" type="Label" parent="Timer"]
+offset_left = 184.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+
+[node name="Minutes" type="Label" parent="Timer"]
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Seconds" type="Label" parent="Timer"]
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="StopTimer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopTimer"]
+position = Vector2(907, 279)
+shape = SubResource("RectangleShape2D_g1wk7")
+
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
+[connection signal="body_entered" from="StopTimer" to="." method="_on_stop_timer_body_entered"]

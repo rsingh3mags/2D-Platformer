@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctpby2jtv45ug"]
+[gd_scene load_steps=15 format=3 uid="uid://ctpby2jtv45ug"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_3806y"]
 [ext_resource type="Texture2D" uid="uid://ce15qspe72aa0" path="res://Assets/monochrome_tilemap_transparent.png" id="2_agf7j"]
@@ -1387,6 +1387,9 @@ separation = Vector2i(1, 1)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kxu2t")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uslx"]
+size = Vector2(20, 21)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_3806y")
 level_num = 1
@@ -1457,4 +1460,40 @@ autoplay = true
 [node name="Coin3" parent="." instance=ExtResource("5_kg3cp")]
 position = Vector2(920, 96)
 
+[node name="Timer" type="CanvasLayer" parent="."]
+
+[node name="Msecs" type="Label" parent="Timer"]
+offset_left = 184.0
+offset_top = 16.0
+offset_right = 216.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Minutes" type="Label" parent="Timer"]
+offset_left = 256.0
+offset_top = 16.0
+offset_right = 280.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Seconds" type="Label" parent="Timer"]
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 248.0
+offset_bottom = 42.0
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="StopTimer" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopTimer"]
+position = Vector2(1240, 282.5)
+shape = SubResource("RectangleShape2D_2uslx")
+
 [connection signal="player_entered" from="Door" to="." method="_on_door_player_entered"]
+[connection signal="body_entered" from="StopTimer" to="." method="_on_stop_timer_body_entered"]
