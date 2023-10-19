@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbtvdtr6yiepk"]
+
+[ext_resource type="Script" path="res://finish.gd" id="1_23p2g"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_k1f0c"]
+[ext_resource type="Texture2D" uid="uid://bnoy5lbmx0gy0" path="res://Assets/Screenshot 2023-10-16 at 10.20.07 AM.png" id="2_op3um"]
+[ext_resource type="AudioStream" uid="uid://dl8omxsddeqok" path="res://Assets/menu.mp3" id="3_6xvrg"]
+
+[node name="Finish" type="Node2D"]
+script = ExtResource("1_23p2g")
+
+[node name="Win" type="Label" parent="."]
+offset_left = 240.0
+offset_top = -17.0
+offset_right = 907.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 90
+text = "Game Finished!"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_k1f0c")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1700, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(846, 283)
+scale = Vector2(1.10155, 1.10441)
+texture = ExtResource("2_op3um")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6xvrg")
+volume_db = 6.0
+autoplay = true
+
+[node name="Options" type="VFlowContainer" parent="."]
+offset_left = 474.0
+offset_top = 102.0
+offset_right = 683.0
+offset_bottom = 612.0
+alignment = 1
+
+[node name="StartButton" type="Button" parent="Options"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Play Again!"
+
+[node name="Fullscreen" type="Button" parent="Options"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Fullscreen
+"
+
+[node name="Quit" type="Button" parent="Options"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Msecs" type="Label" parent="."]
+offset_left = 298.0
+offset_top = 207.0
+offset_right = 370.0
+offset_bottom = 279.0
+theme_override_font_sizes/font_size = 50
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Minutes" type="Label" parent="."]
+offset_left = 141.0
+offset_top = 206.0
+offset_right = 213.0
+offset_bottom = 278.0
+theme_override_font_sizes/font_size = 50
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Seconds" type="Label" parent="."]
+offset_left = 217.0
+offset_top = 208.0
+offset_right = 289.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 50
+text = "00:"
+horizontal_alignment = 2
+metadata/_edit_group_ = true
+
+[node name="Time" type="Label" parent="."]
+offset_left = 177.0
+offset_top = 145.0
+offset_right = 310.0
+offset_bottom = 217.0
+theme_override_font_sizes/font_size = 50
+text = "Time:"
+
+[connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Options/Quit" to="." method="_on_quit_pressed"]

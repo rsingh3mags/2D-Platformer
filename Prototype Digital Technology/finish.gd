@@ -1,21 +1,20 @@
 extends Node2D
 
-# print MainMenu 
 func _ready():
-	
-	print("MainMenu ready!")
-
-# hide the buttons after the player presses start.
+# hide the buttons after the player presses play again.
 	if !OS.has_feature("pc"):
 		$Options/Fullscreen.hide()
 		$Options/Quit.hide() 
+	Global.set_process(false)
+	$Minutes.text = "%02d:" % Global.minutes
+	$Seconds.text = "%02d." % Global.seconds
+	$Msecs.text = "%03d" % Global.msec
 
 
 # When the player presses start level 1 starts playing.
 func _on_start_button_pressed():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 	Global.reset_time()
-	print(Global.time)
-	get_tree().change_scene_to_file("res://level_1.tscn")
 
 # Function for fullscreening the game when player presses Fullscreen button.
 func _on_fullscreen_pressed():

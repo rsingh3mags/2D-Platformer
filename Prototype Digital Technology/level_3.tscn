@@ -1415,7 +1415,7 @@ position = Vector2(107, 281)
 
 [node name="Door" parent="." instance=ExtResource("5_iromj")]
 position = Vector2(2103, 277)
-level = "res://level_2.tscn"
+level = "res://finish.tscn"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 2076.0
