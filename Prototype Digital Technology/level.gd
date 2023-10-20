@@ -6,7 +6,7 @@ extends Node2D
 @onready var time: float = Global.time
 
 # All the code that is needed for the timer to work
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	$Timer/Minutes.text = "%02d:" % Global.minutes
 	$Timer/Seconds.text = "%02d." % Global.seconds
 	$Timer/Msecs.text = "%03d" % Global.msec

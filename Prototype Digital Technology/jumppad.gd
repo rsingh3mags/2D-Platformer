@@ -5,6 +5,7 @@ extends Node2D
 
 # When player enters the jumppad it plays animation and increases players verticel velocity
 # Play Jumppad animations
+# Jumppad sound
 func _on_area_2d_area_entered(area):
 	if area.get_parent() is Player: 
 		area.get_parent().velocity.y += force

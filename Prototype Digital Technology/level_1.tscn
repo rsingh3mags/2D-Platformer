@@ -1419,6 +1419,9 @@ text = "Level 2"
 
 [node name="Coins" type="Node" parent="."]
 
+[node name="Coin7" parent="Coins" instance=ExtResource("5_kg3cp")]
+position = Vector2(920, 96)
+
 [node name="Coin5" parent="Coins" instance=ExtResource("5_kg3cp")]
 position = Vector2(208, 192)
 
@@ -1457,24 +1460,21 @@ stream = ExtResource("11_hhutg")
 volume_db = 8.0
 autoplay = true
 
-[node name="Coin3" parent="." instance=ExtResource("5_kg3cp")]
-position = Vector2(920, 96)
-
 [node name="Timer" type="CanvasLayer" parent="."]
 
 [node name="Msecs" type="Label" parent="Timer"]
-offset_left = 184.0
+offset_left = 248.0
 offset_top = 16.0
-offset_right = 216.0
+offset_right = 280.0
 offset_bottom = 42.0
 text = "00:"
 horizontal_alignment = 2
 metadata/_edit_group_ = true
 
 [node name="Minutes" type="Label" parent="Timer"]
-offset_left = 256.0
+offset_left = 192.0
 offset_top = 16.0
-offset_right = 280.0
+offset_right = 216.0
 offset_bottom = 42.0
 text = "00:"
 horizontal_alignment = 2

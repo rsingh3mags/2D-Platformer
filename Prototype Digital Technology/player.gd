@@ -57,6 +57,7 @@ func _physics_process(delta):
 	
 # When Player enters the Hitbox
 # take player back to the start coodernates and disable player collision untill respawned.
+# dissable collison shape
 	move_and_slide()
 func _on_area_2d_area_entered(area):
 	if area.has_meta("hitbox"):
@@ -64,6 +65,7 @@ func _on_area_2d_area_entered(area):
 		velocity.y = 0
 		dying = true
 		in_Hitbox = true
+		$Player_death.play()
 		$Area2D/CollisionShape2D2.set_deferred("disabled",true)
 		await get_tree().create_timer(1).timeout
 		position.x = 107

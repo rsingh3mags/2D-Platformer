@@ -1,4 +1,8 @@
 extends Node2D
+# level num var
+@export var level_num = 0
+
+
 
 func _ready():
 # hide the buttons after the player presses play again.
@@ -7,10 +11,9 @@ func _ready():
 		$Options/Quit.hide() 
 	Global.set_process(false)
 	$Minutes.text = "%02d:" % Global.minutes
-	$Seconds.text = "%02d." % Global.seconds
+	$Seconds.text = "%02d." % Global.seconds 
 	$Msecs.text = "%03d" % Global.msec
-
-
+	$Gems.text = " " + str(Global.coins_collected)
 # When the player presses start level 1 starts playing.
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://main_menu.tscn")

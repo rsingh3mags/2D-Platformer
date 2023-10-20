@@ -43,6 +43,10 @@ layout_mode = 2
 text = "Quit
 "
 
+[node name="Controls" type="Button" parent="Options"]
+layout_mode = 2
+text = "Controls and instructions"
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("2_2q3yk")
 
@@ -62,3 +66,4 @@ autoplay = true
 [connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Options/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="Options/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Options/Controls" to="." method="_on_controls_pressed"]

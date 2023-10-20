@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c67qj42k5n0gw"]
+
+[ext_resource type="Script" path="res://instructionscontrols.gd" id="1_mrjpf"]
+[ext_resource type="Script" path="res://ParallaxBackground.gd" id="1_rbsdh"]
+[ext_resource type="Texture2D" uid="uid://bnoy5lbmx0gy0" path="res://Assets/Screenshot 2023-10-16 at 10.20.07 AM.png" id="2_s2roa"]
+[ext_resource type="AudioStream" uid="uid://dl8omxsddeqok" path="res://Assets/menu.mp3" id="3_2xoj0"]
+
+[node name="Instructionscontrols" type="Node2D"]
+script = ExtResource("1_mrjpf")
+
+[node name="Controls" type="Label" parent="."]
+offset_left = 354.0
+offset_top = 96.0
+offset_right = 929.0
+offset_bottom = 200.0
+text = "Jump: W      OR       Space Bar     Or    Up Arrow Key 
+Move Left: A OR     Left Arrow Key 
+Move Right: D OR  Right Arrow Key 
+Move Down S OR   DownArrow Key "
+
+[node name="Key componants" type="Label" parent="."]
+offset_left = 319.0
+offset_top = 243.0
+offset_right = 902.0
+offset_bottom = 295.0
+text = "-  Walk into the jumppads To  Super Jump.
+ - Once moving Platform is activated on each level it cannot be de activated."
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2xoj0")
+volume_db = 6.0
+autoplay = true
+
+[node name="Ok" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 444.0
+offset_top = 328.0
+offset_right = 644.0
+offset_bottom = 428.0
+text = "OK"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("1_rbsdh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1700, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(831.5, 277.604)
+scale = Vector2(1.10155, 1.10441)
+texture = ExtResource("2_s2roa")
+
+[connection signal="pressed" from="Ok" to="." method="_on_ok_pressed"]
